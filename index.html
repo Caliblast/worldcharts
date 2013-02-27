@@ -1,0 +1,79 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>WorldCharts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+google.load('visualization', '1', {packages: ['geochart']});
+google.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+    var data = google.visualization.arrayToDataTable([
+        ['Country', 'Site'],
+        ['Germany', 1],
+        ['United States', 1],
+        ['China', 1],
+        ['Hong Kong', 1],
+        ['Taiwan', 1],
+        ['India', 1],
+        ['South Korea', 1],
+        ['France', 1]
+    ]);
+    
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1, {
+        type: 'string',
+        role: 'tooltip',
+        calc: function () {
+            return '';
+        }
+    }]);
+    
+    var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
+    var options = {};
+    options['region'] = 'world';
+    options['resolution'] = 'countries';
+    options['width'] = 1200;
+    options['height'] = 619;
+    options['colors'] = ['#F9B7FF', '#800000'];
+    options['legend'] = 'none';
+
+    google.visualization.events.addListener(geochart, 'select', function() {
+        var selectionIdx = geochart.getSelection()[0].row;
+        var countryName = data.getValue(selectionIdx, 0);
+        var value = data.getValue(selectionIdx, 1);
+        
+        if (value == '1') {
+			window.location = 'http://www.stanford.edu/~rxliu/cgi-bin/worldcharts2/' + countryName;
+            
+        }
+    });
+
+    geochart.draw(view, options);
+}
+
+  </script>
+</head>
+
+<div data-role="page">
+
+	<div data-role="header">
+	<h3> Welcome to WorldCharts</h3>
+	</div><!-- /header -->
+
+	<div data-role="content" style="font-family: Arial;border: 0 none;">	
+		<div id="visualization" align="center">
+		</div>
+</div>
+</div>
+</html>
