@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>WorldCharts</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel = "stylesheet" href = "assets/css/sub.css"/>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	
+</head> 
+<body> 
+<div data-role="page" id="page" style="background-image: url('backgrounds/world.jpg'); background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%;"
+    data-theme="a">
+
+<div data-role="header">
+		<h1>WorldCharts</h1>
+			<div data-role="fieldcontain" data-inline="true" class="ui-btn-right">
+				<select name="select-choice-1" id="select-choice-1" data-inline="true">
+					<option value="China">China</option>
+					<option value="United States">United States</option>
+					<option value="France">France</option>
+					<option value="Germany">Germany</option>
+					<option value="India">India</option>
+					<option value="South Korea">South Korea</option>
+					<option value="Hong Kong">Hong Kong</option>
+					<option value="Taiwan">Taiwan</option>
+				</select>
+				
+				<script>
+					$(function(){
+
+						$('select').change(function() {
+						var nextpage = $(this).children('option:selected').attr('value');
+						$.mobile.changePage( nextpage + '.php' );
+						});
+
+					});
+				</script>
+			</div>
+	
+	</div><!-- /header -->	
+	
+<div data-role="content">	
+	<a href="United States.php" class = "thru" id = "USA1"><img src="thru.gif" width="60" height="32"></a>
+	<a href="United States.php" class = "thru" id = "USA2"><img src="thru.gif" width="120" height="60"></a>
+	<a href="France.php" class = "thru" id = "France"><img src="thru.gif" width="30" height="20"></a>
+	<a href="Germany.php" class = "thru" id = "Germany"><img src="thru.gif" width="20" height="15"></a>
+	<a href="India.php" class = "thru" id = "India"><img src="thru.gif" width="50" height="60"></a>
+	<a href="China.php" class = "thru" id = "China"><img src="thru.gif" width="100" height="60"></a>
+	<a href="South Korea.php" class = "thru" id = "Korea"><img src="thru.gif" width="20" height="20"></a>
+	<a href="Taiwan.php" class = "thru" id = "Taiwan"><img src="thru.gif" width="10" height="20"></a>
+	<a href="Hong Kong.php" class = "thru" id = "Hongkong"><img src="thru.gif" width="5" height="5"></a>
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>
