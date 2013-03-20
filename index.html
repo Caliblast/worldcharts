@@ -1,79 +1,145 @@
-<!--
-You are free to copy and use this sample in accordance with the terms of the
-Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
--->
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>WorldCharts</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="themes/worldcharts.min.css" />
+	<link rel = "stylesheet" href = "assets/css/sub.css"/>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" />
+	<script src = "assets/js/modernizr.js" /></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>WorldCharts</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-google.load('visualization', '1', {packages: ['geochart']});
-google.setOnLoadCallback(drawVisualization);
+</head> 
+<body> 
 
-function drawVisualization() {
-    var data = google.visualization.arrayToDataTable([
-        ['Country', 'Site'],
-        ['Germany', 1],
-        ['United States', 1],
-        ['China', 1],
-        ['Hong Kong', 1],
-        ['Taiwan', 1],
-        ['India', 1],
-        ['South Korea', 1],
-        ['France', 1]
-    ]);
-    
-    var view = new google.visualization.DataView(data);
-    view.setColumns([0, 1, {
-        type: 'string',
-        role: 'tooltip',
-        calc: function () {
-            return '';
-        }
-    }]);
-    
-    var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
-    var options = {};
-    options['region'] = 'world';
-    options['resolution'] = 'countries';
-    options['width'] = 1200;
-    options['height'] = 619;
-    options['colors'] = ['#F9B7FF', '#800000'];
-    options['legend'] = 'none';
+<div data-role="page" id="page" style="background-image: url('backgrounds/background.png'); background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%;"
+    data-theme="a">
 
-    google.visualization.events.addListener(geochart, 'select', function() {
-        var selectionIdx = geochart.getSelection()[0].row;
-        var countryName = data.getValue(selectionIdx, 0);
-        var value = data.getValue(selectionIdx, 1);
-        
-        if (value == '1') {
-			window.location = 'http://www.worldcharts.co/' + countryName + '.php';
-            
-        }
-    });
 
-    geochart.draw(view, options);
-}
 
-  </script>
-</head>
-
-<div data-role="page">
-
-	<div data-role="header">
+<div data-role="header">
 	<h3> Welcome to WorldCharts</h3>
-	</div><!-- /header -->
+</div><!-- /header -->
+		
+	<div class = "headline"><p> One Stop Shop for Music Around the World!</p></div>
+	<div class = "sub_headline"><p>Check out what's hot in...</p></div>
+	<table border = "0" id = "stripe">
+		<td>
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front" id = "front">
+						<a href = "China.php"><img src = "flags/China.gif"  class = "cover"/></a>
+						<p>China</p>
+					</div>
+					<div class="back" id = "back">	
+						<a href = "China.php"><img src = "albums/China.gif" class = "cover"/></a>
+						<p>China<p>
+				</div>
+			</div>
+			</div>
+		</td>
+		<td>
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front" id = "front">
+						<a href = "South Korea.php"><img src = "flags/Korea.png"  class = "cover"/></a>
+						<p>South Korea</p>
+					</div>
+					<div class="back" id = "back">	
+						<a href = "South Korea.php"><img src = "albums/Korea.jpg" class = "cover"/></a>
+						<p>South Korea</p>
+					</div>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front" id = "front">
+						<a href = "United States.php"><img src = "flags/USA.png"  class = "cover"/></a>
+						<p>United States</p>
+					</div>
+					<div class="back" id = "back">	
+						<a href = "United States.php"><img src = "albums/USA.jpg" class = "cover"/></a>
+						<p>United States</p>
+					</div>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front" id = "front">
+						<a href = "France.php"><img src = "flags/France.png" class = "cover"/></a>
+						<p>France</p>
+					</div>
+					<div class="back" id = "back">	
+						<a href = "France.php"><img src = "albums/France.jpg" class = "cover"/> </a>
+						<p>France</p>
+					</div>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front" id = "front">
+						<a href = "Germany.php"><img src = "flags/Germany.gif"  class = "cover"/></a>
+						<p>Germany</p>
+					</div>
+					<div class="back" id = "back">	
+						<a href = "Germany.php"><img src = "albums/Germany.jpg" class = "cover"/> </a>
+						<p>Germany</p>
+					</div>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front" id = "front">
+						<a href = "Hong Kong.php"><img src = "flags/Hong Kong.png"  class = "cover"/></a>
+						<p>Hong Kong</p>
+					</div>
+					<div class="back" id = "back">	
+						<a href = "Hong Kong.php"><img src = "albums/Hong Kong.jpg" class = "cover"/> </a>
+						<p>Hong Kong</p>
+					</div>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front" id = "front">
+						<a href = "Taiwan.php"><img src = "flags/Taiwan.png"  class = "cover"/></a>
+						<p>Taiwan</p>
+					</div>
+					<div class="back" id = "back">	
+						<a href = "Taiwan.php"><img src = "albums/Taiwan.jpg" class = "cover"/> </a>
+						<p>Taiwan</p>
+					</div>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front" id = "front">
+						<a href = "India.php"><img src = "flags/India.png"  class = "cover"/></a>
+						<p>India</p>
+					</div>
+					<div class="back" id = "back">	
+						<a href = "India.php"><img src = "albums/India.jpg" class = "cover"/> </a>
+						<p>India</p>
+					</div>
+				</div>
+			</div>
+		</td>
+	</table>
+	
+	<div class = "end"><p> And many more countries to come...</p></div>
 
-	<div data-role="content" style="font-family: Arial;border: 0 none;">	
-		<div id="visualization" align="left">
-		</div>
-</div>
 </div>
 </html>
