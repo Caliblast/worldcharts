@@ -2,12 +2,12 @@
 <html> 
 <head> 
 	<title>World Charts</title> 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 	<meta name = "description" content = "Listen to the top 10 most popular songs in United States, China, India, South Korea, France, Germany, Taiwan, Hong Kong and many more countries to come!">
 	<link rel="stylesheet" href="themes/worldcharts.min.css" />
 	<link rel = "stylesheet" href = "assets/css/sub.css"/>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" />
+	<link rel="apple-touch-icon" href="logo.png"/>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
 
