@@ -4,10 +4,10 @@
 	<title>World Charts</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<meta name = "description" content = "Listen to the top 10 most popular songs in United States, China, India, South Korea, France, Germany, Taiwan, Hong Kong and many more countries to come!">
 	<link rel="stylesheet" href="themes/worldcharts.min.css" />
-	<link rel = "stylesheet" href = "assets/css/sub1.css"/>
+	<link rel = "stylesheet" href = "assets/css/sub.css"/>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" />
-	<script src = "assets/js/modernizr.js" /></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
 
@@ -19,9 +19,9 @@
 
 <div class = "theme">
 	<table border = "0">
-	<td width = "7%"><img src = "logo.png" width = "70px" height = "70px" style="margin-left:20px; margin-top:-20px;"/></td>
+	<td width = "7%"><a href ="index.php"><img src = "logo.png" width = "70px" height = "70px" style="margin-left:20px; margin-top:-20px;"/></a></td>
 	<td width = "37%"><div id = "theme"><h1>World Charts</h1></div></td>
-	<td width = "50%" style ="color:grey; font-size:20px;"><p>The World is listening</p></td>
+	<td width = "65%" style ="color:grey; font-size:20px;"><p>The World is listening</p></td>
 	<td width = "3%" style = "text-align:right;"><a href = "about.html" style="text-decoration: none; color:black;"><h3>About</h3></a></td>
 	</table>
 </div>
@@ -404,7 +404,7 @@
 		<table border = "0" id = "stripe" >
 		<tr>
 		<td>
-			<div class="flip-container" id = "usa" ontouchstart="this.classList.toggle('hover');">
+			<div class="flip-container highlight" id = "usa" ontouchstart="this.classList.toggle('hover');">
 				<div class="flipper">
 					<div class="front">
 					<img src = "flags/USA.png"  class = "cover"/></a>
@@ -421,7 +421,9 @@
 			<script>
 						
 						$("#usa").click(function(e) {		
-							$('input[value$="1"]').click()
+							$('input[value$="1"]').click();
+							$('div.flip-container').removeClass('highlight');
+							$(this).addClass('highlight');
 						})				
 						
 			</script>
@@ -443,7 +445,9 @@
 			<script>
 						
 						$("#china").click(function(e) {		
-							$('input[value$="2"]').click()
+							$('input[value$="2"]').click();
+							$('div.flip-container').removeClass('highlight');
+							$(this).addClass('highlight');
 						})				
 						
 			</script>
@@ -465,7 +469,9 @@
 			<script>
 						
 						$("#india").click(function(e) {		
-							$('input[value$="3"]').click()
+							$('input[value$="3"]').click();
+							$('div.flip-container').removeClass('highlight');
+							$(this).addClass('highlight');
 						})				
 						
 			</script><!--india-->
@@ -488,7 +494,9 @@
 			<input type="radio" name="countries" value="4" style="visibility:hidden;position:absolute;top:0;left:0" />
 		<script>
 						$("#korea").click(function(e) {
-							$('input[value$="4"]').click()	
+							$('input[value$="4"]').click();
+							$('div.flip-container').removeClass('highlight');
+							$(this).addClass('highlight');							
 						})				
 						
 		</script><!--korea-->
@@ -509,7 +517,9 @@
 			<input type="radio" name="countries" value="5" style="visibility:hidden;position:absolute;top:0;left:0" />
 		<script>
 						$("#france").click(function(e) {
-							$('input[value$="5"]').click()	
+							$('input[value$="5"]').click();
+							$('div.flip-container').removeClass('highlight');
+							$(this).addClass('highlight');	
 						})				
 						
 		</script><!--france-->
@@ -530,7 +540,9 @@
 		<input type="radio" name="countries" value="6" style="visibility:hidden;position:absolute;top:0;left:0" />
 		<script>
 						$("#germany").click(function(e) {
-							$('input[value$="6"]').click()	
+							$('input[value$="6"]').click();
+							$('div.flip-container').removeClass('highlight');
+							$(this).addClass('highlight');	
 						})				
 						
 		</script><!--germany-->
@@ -553,7 +565,9 @@
 		<input type="radio" name="countries" value="7" style="visibility:hidden;position:absolute;top:0;left:0" />
 		<script>
 						$("#taiwan").click(function(e) {
-							$('input[value$="7"]').click()	
+							$('input[value$="7"]').click();
+							$('div.flip-container').removeClass('highlight');
+							$(this).addClass('highlight');	
 						})				
 						
 		</script><!--taiwan-->
@@ -575,7 +589,9 @@
 		<input type="radio" name="countries" value="8" style="visibility:hidden;position:absolute;top:0;left:0" />
 		<script>
 						$("#hk").click(function(e) {
-							$('input[value$="8"]').click()	
+							$('input[value$="8"]').click();
+							$('div.flip-container').removeClass('highlight');
+							$(this).addClass('highlight');	
 						})				
 						
 		</script><!--hk-->
@@ -602,5 +618,5 @@ $(document).ready(function() {
 </script>
 
 
-
+</body>
 </html>
