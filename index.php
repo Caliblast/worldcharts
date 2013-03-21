@@ -19,10 +19,10 @@
 
 <div class = "theme">
 	<table border = "0">
-	<td width = "7%"><a href ="index.php"><img src = "logo.png" width = "70px" height = "70px" style="margin-left:20px; margin-top:-20px;"/></a></td>
-	<td width = "37%"><div id = "theme"><a href ="index.php" style="text-decoration: none; color:grey;"><h1>World Charts</h1></a></div></td>
+	<td width = "7%"><a href ="index"><img src = "logo.png" width = "70px" height = "70px" style="margin-left:20px; margin-top:-20px;"/></a></td>
+	<td width = "37%"><div id = "theme"><a href ="index" style="text-decoration: none; color:grey;"><h1>World Charts</h1></a></div></td>
 	<td width = "65%" style ="color:grey; font-size:20px;"><p>The World is listening</p></td>
-	<td width = "3%" style = "text-align:right;"><a href = "about.html" style="text-decoration: none; color:black;"><h3>About</h3></a></td>
+	<td width = "3%" style = "text-align:right;"><a href = "about" style="text-decoration: none; color:black;"><h3>About</h3></a></td>
 	</table>
 </div>
 		
