@@ -17,10 +17,14 @@
 <div data-role="page" id="page" data-theme="a">
 
 
-
-<div data-role="header">
-	<h2> Welcome to WorldCharts</h2>
-</div><!-- /header -->
+<div class = "theme">
+	<table border = "0">
+	<td width = "7%"><img src = "logo.png" width = "70px" height = "70px" style="margin-left:20px; margin-top:-20px;"/></td>
+	<td width = "37%"><div id = "theme"><h1>World Charts</h1></div></td>
+	<td width = "50%" style ="color:grey; font-size:20px;"><p>The World is listening</p></td>
+	<td width = "3%" style = "text-align:right;"><a href = "about.html" style="text-decoration: none; color:black;"><h3>About</h3></a></td>
+	</table>
+</div>
 		
 	<table border = "0" id = "whole">
 	<td width = "70%">
@@ -341,6 +345,51 @@
 		
 ?>
 		</div><!--taiwan-->
+		
+		
+		<!--Taiwan-->
+	  <div id="country8" class="ui-grid-a" style="display: none;">
+	 		<?php
+			mysql_connect ("mysql-user-master.stanford.edu","ccs147rxliu","DUVRcwnPDTHGhfty") or die ('Cannot connect to MySQL: ' . mysql_error());
+			mysql_select_db ("c_cs147_rxliu") or die ('Cannot connect to the database: ' . mysql_error());			
+			$query = "SELECT * FROM list WHERE username = 'Hong Kong'";
+		$result = mysql_query($query);
+		while ($row = mysql_fetch_assoc($result)) {
+				$rank = $row["Ranking"];
+				if ($rank == 1) {
+				echo "<div class = 'no1' id = 'top'>";
+				echo "<img src = 'numbers/$rank.gif' width = 10%;/>";
+				echo "<a href='".$row["Itunes"]."' target = 'blank' data-role='button' span style='float:right' id = 'buy1' data-theme='a' data-inline = 'true' >Get it on Itunes</a>";
+				echo "<div class = 'video'><iframe width='476' height='268' src='".$row["Youtube"]."' param name='wmode' value='transparent' frameborder='0' allowfullscreen></iframe></div>";
+				echo "<div class = 'title1'>".$row["SongName"]."</div>";
+				echo "<div class = 'singer1'>".$row["Singer"]."</div></div>";
+				}
+				else if($rank% 2 == 0) {
+					echo "<div class = 'ui-block-a' id = 'song_three'>";
+					if ($rank < 10)
+						echo "<img src = 'numbers/$rank.gif' width = 13.6%; />";
+					else echo "<img src = 'numbers/$rank.gif' width = 18%; />";
+					echo "<a href='".$row["Itunes"]."' target = 'blank' data-role='button' id = 'buy' span style='float:right' data-theme='a' data-inline = 'true' data-mini='true'>Get it on Itunes</a>";
+					echo "<div class = 'video_three' ><iframe width='364' height='205' src='".$row["Youtube"]."' frameborder='0' allowfullscreen></iframe></div>";
+					echo "<div class = 'title'>".$row["SongName"]."</div>";
+					echo "<div class = 'singer'>".$row["Singer"]."</div>";
+					echo "</div>";
+				}
+				else if($rank% 2 == 1) {
+					echo "<div class = 'ui-block-b' id = 'song_three'>";
+					if ($rank < 10)
+						echo "<img src = 'numbers/$rank.gif' width = 13.6%; />";
+					else echo "<img src = 'numbers/$rank.gif' width = 18%; />";
+					echo "<a href='".$row["Itunes"]."' target = 'blank' data-role='button' id = 'buy' span style='float:right' data-theme='a' data-inline = 'true' data-mini='true'>Get it on Itunes</a>";
+					echo "<div class = 'video_three' ><iframe width='364' height='205' src='".$row["Youtube"]."' frameborder='0' allowfullscreen></iframe></div>";
+					echo "<div class = 'title'>".$row["SongName"]."</div>";
+					echo "<div class = 'singer'>".$row["Singer"]."</div>";
+					echo "</div>";
+				}
+		}
+		
+?>
+		</div><!--hk-->
 	</td>
 	
 	
@@ -351,7 +400,7 @@
 	
 	
 	
-	<td width = "30%">
+	<td width = "30%" valign="top">
 		<table border = "0" id = "stripe" >
 		<tr>
 		<td>
@@ -523,6 +572,13 @@
 				</div>
 			</div>
 		</td>
+		<input type="radio" name="countries" value="8" style="visibility:hidden;position:absolute;top:0;left:0" />
+		<script>
+						$("#hk").click(function(e) {
+							$('input[value$="8"]').click()	
+						})				
+						
+		</script><!--hk-->
 		</tr>
 	</table><!--videos-->
 		</td>
