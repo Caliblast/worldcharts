@@ -411,7 +411,7 @@
 						<p>United States</p>
 					</div>
 					<div class="back">	
-					<img src = "albums/USA.jpg" class = "cover"/></a>
+					<img src = "albums/USA.png" class = "cover"/></a>
 					<p>United States</p>
 					</div>
 				</div>
@@ -435,7 +435,7 @@
 						<p>China</p>
 					</div>
 					<div class="back">	
-						<img src = "albums/China.gif" class = "cover"/></a>
+						<img src = "albums/China.jpg" class = "cover"/></a>
 						<p>China<p>				
 				</div>
 			</div>
